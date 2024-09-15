@@ -20,21 +20,11 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="text-white bg-dark" style="margin-right: 10px">
+            <h3><i>XYZ (EMS)</i></h3>
+          </li>
           {% if not request.user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'entry' %}">Reg/Login</a>
@@ -47,6 +37,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add_profile' %}">Add Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'update_profile'%}"
+              >Update Profile</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'delete_profile'%}"
+              >Delete Profile</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>

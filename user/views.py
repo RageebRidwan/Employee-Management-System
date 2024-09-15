@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import CreateUser, CreateProfile
+from .forms import CreateUser, CreateProfile, UpdateProfile
+from .models import Profile
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError, ObjectDoesNotExist
 
 
 # Create your views here.
@@ -43,6 +45,7 @@ def userlogin(request):
 
 @login_required
 def user_logout(request):
+    messages.success(request, "You have been logged out.")
     logout(request)
     return redirect("entry")
 
@@ -63,5 +66,34 @@ def add_profile(request):
 
 
 @login_required
-def update_profile(request, pk):
-    pass
+def update_profile(request):
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except ObjectDoesNotExist:
+        messages.error(request, "No profile found.")
+        return redirect("add_profile")
+    if request.method == "POST":
+        form = UpdateProfile(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Profile has been updated.")
+            return redirect("home")
+        else:
+            messages.error(request, "Invalid form submission.")
+    else:
+        form = UpdateProfile(instance=profile)
+    return render(
+        request, "update_profile.html", {"form": form, "type": "Update Profile"}
+    )
+
+
+@login_required
+def delete_profile(request):
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except ObjectDoesNotExist:
+        messages.error(request, "You don't have a profile yet.")
+        return redirect("add_profile")
+    profile.delete()
+    messages.warning(request, "Your profile has been deleted.")
+    return redirect("home")

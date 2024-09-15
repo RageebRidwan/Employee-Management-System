@@ -47,4 +47,4 @@ class CreateProfile(forms.ModelForm):
 class UpdateProfile(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ["salary", "designation"]
+        exclude = ["user", "salary", "designation"]
