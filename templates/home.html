@@ -3,13 +3,14 @@
   {% for p in data %}
   <div class="col-sm-3">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" style="background-color: #f5f5f5; color: #333333">
         <large class="card-title"><b>{{p.name}}</b></large>
-        <br /><small><b>Address: </b>{{p.address}}</small> <br /><small
-          ><b>Phone: </b>{{p.phone_number}}</small
+        <br /><small><b>Address : </b>{{p.address}}</small> <br /><small
+          ><b>Phone : </b>{{p.phone_number}}</small
         >
-        <br /><small><b>Designation: </b>{{p.designation}}</small> <br /><small>
-          <b>Description:</b>
+        <br /><small><b>Designation : </b>{{p.designation}}</small>
+        <br /><small>
+          <b>Description : </b>
           <br />
           {{p.description}}
         </small>
