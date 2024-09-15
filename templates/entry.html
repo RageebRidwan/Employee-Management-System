@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {% block content %}
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="margin-top: 100px"
+>
+  <div class="card">
+    <div class="card-body text-center">
+      <h5 class="card-title">Welcome to XYZ (EMS) Website!</h5>
+      <h6 class="card-subtitle mb-2 text-muted">We're glad you're here</h6>
+      <p class="card-text">
+        Get started by registering or logging in to explore our platform.
+      </p>
+
+      <a href="{% url 'register' %}" class="btn btn-primary m-2">Register</a>
+      <a href="{% url 'login' %}" class="btn btn-warning m-2">Login</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

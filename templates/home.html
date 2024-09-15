@@ -1,0 +1,25 @@
+{% extends 'base.html'%} {% block content %}
+<div class="d-flex flex-wrap justify-content-center" style="margin-top: 20px">
+  {% for p in data %}
+  <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <large class="card-title"><b>{{p.name}}</b></large>
+        <br /><small><b>Address: </b>{{p.address}}</small> <br /><small
+          ><b>Phone: </b>{{p.phone_number}}</small
+        >
+        <br /><small><b>Salary: </b>BDT {{p.salary}}</small> <br /><small
+          ><b>Designation: </b>{{p.designation}}</small
+        >
+        <br /><small>
+          <b>About:</b>
+          <br />
+          {{p.description}}
+        </small>
+        <br />
+      </div>
+    </div>
+  </div>
+  {% endfor%}
+</div>
+{% endblock %}
