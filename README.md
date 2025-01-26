@@ -2,7 +2,7 @@
 
 **A simple employee management web app built with Django that supports basic CRUD operations.**
 
-**🌐 Live Demo : [Click here to view the live application](https://employee-management-system-4thw.onrender.com)
+**🌐 Live Demo : [Click here to view the live application](https://employee-management-system-4thw.onrender.com)**
 
 ![ss0](https://github.com/user-attachments/assets/a35577d8-3f29-469a-8e21-517b0100df68)
 ![ss1](https://github.com/user-attachments/assets/a91817fb-b288-4d6c-b455-5da508ba3ad2)
