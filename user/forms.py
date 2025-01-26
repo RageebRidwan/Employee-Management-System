@@ -43,6 +43,8 @@ class CreateProfile(forms.ModelForm):
                 raise ValidationError("You already have a profile.")
         return cleaned_data
 
+    # cleaned_data return korano essential cz form.is_valid() check er shomoy clean() method o triggered hoy and tokhon custom validation logic par koira validated data return na koraile form.save() and also form er context data te bhul thakbe
+
 
 class UpdateProfile(forms.ModelForm):
     class Meta:

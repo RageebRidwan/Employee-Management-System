@@ -61,7 +61,7 @@ def add_profile(request):
             messages.success(request, "Your profile has been created.")
             return redirect("home")
     else:
-        form = CreateProfile(user=request.user)
+        form = CreateProfile()
     return render(request, "add_profile.html", {"form": form, "type": "Create Profile"})
 
 
