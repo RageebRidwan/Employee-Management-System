@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-h@=f6coz-kk(5lqf5nxy%iz8r_n@m=1mbaj(*0_s82t#9$vovc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = 'employee-management-system-lxeg.onrender.com'
+ALLOWED_HOSTS = ['employee-management-system-lxeg.onrender.com',]
 CSRF_TRUSTED_ORIGINS = [
     "https://employee-management-system-lxeg.onrender.com",  # Use the full URL
 ]
