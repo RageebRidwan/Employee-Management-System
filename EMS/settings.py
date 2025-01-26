@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['employee-management-system-lxeg.onrender.com','employee-management-system-4thw.onrender.com']
 CSRF_TRUSTED_ORIGINS = [
-    "https://employee-management-system-lxeg.onrender.com",  # Use the full URL
+    "https://employee-management-system-lxeg.onrender.com",'https://employee-management-system-4thw.onrender.com/'  # Use the full URL
 ]
 
 # Application definition
