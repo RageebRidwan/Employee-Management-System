@@ -13,9 +13,8 @@ def home(request):
     query = request.GET.get("q")
     if query:
         data = Profile.objects.filter(
-            Q(first_name__icontains=query)
-            | Q(last_name__icontains=query)
-            | Q(email__icontains=query)
+            Q(name__icontains=query)
+            | Q(designation__icontains=query)
         )
     else:
         data = Profile.objects.all()
