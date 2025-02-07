@@ -16,6 +16,9 @@ def home(request):
             Q(name__icontains=query)
             | Q(designation__icontains=query)
         )
+        if not data.exists():
+            return render(request,'nothing_to_show.html')
+
     else:
         data = Profile.objects.all()
     return render(request, "home.html", {"data": data})
